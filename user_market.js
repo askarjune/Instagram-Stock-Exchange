@@ -10,6 +10,7 @@ var userHashtags;
 var userQuantity;
 
 userCoin = 100;
+file = "yeehaw_memes.json"
 userHashtags = ["Pepe", "Here Come Dat Boi", "Forever Alone"];
 userQuantity = {"Pepe" : 5, "Here Come Dat Boi" : 10, "Forever Alone" : 1}
 
@@ -63,3 +64,24 @@ function buyHashtag(quantity, tag){
     }
   }
 }
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+setInterval(readTextFile, 10000);
+

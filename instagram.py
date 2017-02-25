@@ -54,4 +54,4 @@ while True:
 	with open("yeehaw_memes.json", 'w') as f:
 		json.dump(dic,f)
 	print dic
-	time.sleep(10)
+	time.sleep(60)
