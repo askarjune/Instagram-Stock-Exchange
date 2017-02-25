@@ -1,27 +1,44 @@
 import requests
 import json
 import time
+import re
 
+# retrieves number of followers for given users and stores information in a dict
 def testInstagramData(usernames, dic):
 
 	base = "https://www.instagram.com/{user}"
 
+	# iterate through the usernames
 	for u in usernames:
+
+		# get HTML for user's profile
 	    url = base.format(user = u)
 	    resp = requests.get(url)
 
+	    # if http request was successful
 	    if resp.status_code == 200:
+
+	    	# store html
 	    	data = resp.text
+
+	    	# retrieve followers
 	    	parsed = filter(lambda x:'\"followed_by\"' in x, data.split(","))
 
+	    	# if a new dict/key, then initiate the dict
 	    	if u not in dic:
 	    		dic[u] = {}
 	    		dic[u]["previous"] = 0
-	    		dic[u]["current"] = parsed[0].split('\"count\": ')[1][:-1].replace('}','').replace('{','').replace(']','')
+	    		dic[u]["current"] = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][:-1])
 	    		dic[u]["value"] = 0
+	    	# else, update the current dictionary value
 	    	else:
+	    		# replace "previous" with the current value
 	    		dic[u]["previous"] = dic[u]["current"]
-	    		dic[u]["current"] = parsed[0].split('\"count\": ')[1][:-1].replace('}','').replace('{','').replace(']','')
+
+	    		# replace "current" with the new value
+	    		dic[u]["current"] = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][:-1])
+	    		
+	    		# calculate value, which is current - previous
 	    		dic[u]["value"] = int(dic[u]["current"]) - int(dic[u]["previous"])
 	
 	return dic
