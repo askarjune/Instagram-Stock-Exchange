@@ -26,10 +26,12 @@ marketValue = {"Pepe" : 500, "Here Come Dat Boi" : 20, "Forever Alone" : 5000}
 //Functions
 
 function sellHashtag(quantity, tag){
-  var profit = quanity*marketValue[tag];
-  userCoin += profit;
-  //removes sold hashtags from userQuantity
-  userQuantity[tag] -= quantity;
+  if (quantity < userQuantity[tag]) {
+    var profit = quanity*marketValue[tag];
+    userCoin += profit;
+    //removes sold hashtags from userQuantity
+    userQuantity[tag] -= quantity;
+  }
   //removes hashtag from userQuantity if user has none
   if (userQuantity[tag] <= 0){
     delete userQuantity[tag];
@@ -55,7 +57,7 @@ function buyHashtag(quantity, tag){
     }
     else{
       dict.push({
-        key:   tag,
+        key: tag,
         value: 1;
       });
     }
