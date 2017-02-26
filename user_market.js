@@ -8,6 +8,7 @@ PURPOSE: Hack@Smith Hackathon
 var userCoin;
 var userHashtags;
 var userQuantity;
+var fs = require('fs');
 
 userCoin = 100;
 file = "yeehaw_memes.json"
@@ -79,6 +80,7 @@ function readTextFile(file)
         }
     }
     rawFile.send(null);
+    return allText;
 }
 
 setInterval(readTextFile, 10000);
