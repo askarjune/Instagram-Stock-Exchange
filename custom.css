@@ -1,16 +1,12 @@
 body {
-    padding: 20px;
+    margin: 30px;
     background-color: #040e14;
     font-family: 'Varela Round', sans-serif;
     color: #f8f1e9;
 }
 
-#popular {
-  width: 80%;
-}
-
-#yours {
-  width: 80%;
+.faq {
+  margin: 20px;
 }
 
 .c3 .c3-axis-x path, .c3 .c3-axis-x line {
@@ -42,8 +38,4 @@ color: #f8f1e9;
 font-family: 'Varela Round', sans-serif;
 padding: 3px 6px;
 background-color:#040e14;
-}
-
-.nav-inverse{
-  background-color:#2a3435;
 }
