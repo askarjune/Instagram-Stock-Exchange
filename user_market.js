@@ -19,10 +19,8 @@ var marketHashtags;
 var marketValue;
 
 //reads JSON file to get current buy/sell data
-marketHashtags = ["instagram","selenagomez","taylorswift","arianagrande","beyonce","kimkardashian","cristiano","kyliejenner","justinbieber","therock"];
-
-marketValue = {"instagram" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagrande" : 0, "beyonce" : 0, "kimkardashian" : 0, "cristiano" : 0, "kyliejenner" : 0, "justinbieber" : 0, "therock" : 0}
-
+marketHashtags = ["katyperry","selenagomez","taylorswift","choi_seung_hyun_tttop","beyonce","kimkardashian","kanyewest","kyliejenner","justinbieber","therock"]
+marketValue = {"katyperry" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagrande" : 0, "beyonce" : 0, "kimkardashian" : 0, "kanyewest" : 0, "kyliejenner" : 0, "justinbieber" : 0, "therock" : 0}
 
 //Functions
 
