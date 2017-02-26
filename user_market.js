@@ -110,3 +110,7 @@ function buyHashtag(){
       a.innerHTML = userCoin;
 	  return userCoin;
 	}
+
+	function getStocks(){
+	  return userQuantity;
+	}
