@@ -53,7 +53,7 @@ function buyHashtag(quantity, tag){
   userCoin -= profit;
 
   //adds bought hashtags to userQuantity
-  for (int i = 0; i < userHashtags.length(); i++){
+  for (i = 0; i < userHashtags.length(); i++){
     if (userQuantity[i] == tag){
       userQuantity[i] += quantity;
     }
