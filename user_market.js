@@ -12,8 +12,7 @@ var fs = require('fs');
 
 userCoin = 100;
 file = "yeehaw_memes.json"
-userHashtags = ["Pepe", "Here Come Dat Boi", "Forever Alone"];
-userQuantity = {"Pepe" : 5, "Here Come Dat Boi" : 10, "Forever Alone" : 1}
+userQuantity = {"therock" : 5}
 
 //Market Side Implementation
 var marketHashtags;
@@ -27,19 +26,18 @@ marketGrowth = {"katyperry" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagr
 
 //Functions
 
-function sellHashtag(quantity, tag){
-  if (quantity < userQuantity[tag]) {
-    var profit = quanity*marketValue[tag];
+function sellHashtag(tag){
+    var profit = marketValue[tag];
     userCoin += profit;
     //removes sold hashtags from userQuantity
-    userQuantity[tag] -= quantity;
-  }
+    userQuantity[tag] -= 1;
+  
   //removes hashtag from userQuantity if user has none
   if (userQuantity[tag] <= 0){
     delete userQuantity[tag];
   }
 
-  for (int i = 0; i < userHashtag.length(); i++){
+  for (i = 0; i < userHashtag.length(); i++){
     if (userHashtag[i] == tag){
       array.splice(i, 1);
     }
@@ -48,19 +46,19 @@ function sellHashtag(quantity, tag){
 }
 
 
-function buyHashtag(quantity, tag){
-  var profit = quanity*marketValue[tag];
+function buyHashtag(tag){
+  var profit = marketValue[tag];
   userCoin -= profit;
 
   //adds bought hashtags to userQuantity
   for (i = 0; i < userHashtags.length(); i++){
     if (userQuantity[i] == tag){
-      userQuantity[i] += quantity;
+      userQuantity[i] += 1;
     }
     else{
       dict.push({
         key: tag,
-        value: 1;
+        value: 1
       });
     }
   }
