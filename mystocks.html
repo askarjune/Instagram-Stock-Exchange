@@ -22,9 +22,8 @@
   <link rel="stylesheet" href="buy_sell.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 </head>
-<body>
 
-  <body>
+<body>
 
   <nav class="navbar navbar-inverse">
     <ul class="nav navbar-nav">
@@ -40,13 +39,11 @@
   </div>
 
 
-  <div class="container-fluid" id="left">
     <h1>My Instas</h1>
     <p>Here are your Instas, click View to see selling option.</p>
 
-    <!DOCTYPE html>
-    <html>
-    <body>
+	<div class="row">
+		<div class="col-sm-6">
 
     <table class="table table-striped" id="userTable">
      <thead>
@@ -132,10 +129,13 @@
      </tbody>
    </table>
   </div>
+  
+  	<center>
+    <h1>Your Instas</h1>
+	</center>
 
-  <div class="container-fluid" id = "right">
-    <div class="col-sm-6">
-
+	<div class="col-sm-6">
+  	<div id="yours"></div>
     <script>
 
     // var memesjson = (function() {
@@ -169,13 +169,7 @@
     };
     </script>
 
-  </div>
-<div class = "row0">
-  <div class="col-sm-6">
-    <center style="margin:10px">
-    <h1>Your Instas</h1>
-    <div id="yours"></div>
-  </center>
+
     <script>
     var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}};
     var memecols = [];
@@ -196,16 +190,12 @@
     </script>
 
   </div>
-  </div>
+
 
       <button type="button" class="btn btn-default"> Buy </button>
 
 
 
-      
-    </div>
-
-  </div>
 
 
 
@@ -214,12 +204,3 @@
   </center>
   </html>
 
-
-
-</div>
-
-
-
-</body>
-</center>
-</html>
