@@ -24,6 +24,18 @@
   <link rel="stylesheet" href="buy_sell.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 
+  <script>
+  $('.btn').click(function( event ){ // <---- "event" parameter here
+
+    event.preventDefault();
+    var categories = $(this).attr('rel');
+    buyHashtag();
+
+
+});
+
+  </script>
+
   <!-- <script src="user_market.js"></script> -->
 
 </head>
@@ -37,7 +49,7 @@
     <li><a href="about.html">About</a></li>
 
   </ul>
-  <p class="navbar-text">My Coins: #1000</p>
+  <p class="navbar-text">My Coins: #2500</p>
 </nav>
 
 <div class="container">
@@ -65,70 +77,70 @@
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default" id="b1" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default" id="b1" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>2.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default" id="b2" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default" id="b2" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>3.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default" id="b3" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default" id="b3" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>4.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default" id="b4" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default" id="b4" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>5.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b5" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default"  id="b5" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>6.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b6" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default"  id="b6" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>7.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b7" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default"  id="b7" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>8.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b8" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default"  id="b8" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>9.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b9" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default"  id="b9" onclick="buyHashtag()"> Buy </button></td>
      </tr>
      <tr>
        <td>10.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
-       <td><button type="button" class="btn btn-default" id="b10" onclick="sellHashtag()"> Buy </button></td>
+       <td><button type="button" class="btn btn-default" id="b10" onclick="buyHashtag()"> Buy </button></td>
      </tr>
    <!--</tbody>-->
  </table>

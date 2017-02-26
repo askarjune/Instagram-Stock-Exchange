@@ -11,7 +11,7 @@ var userNum = {};
 
 userCoin = 100;
 file = "yeehaw_memes.json"
-userQuantity = {};
+userQuantity = [];
 
 
 
@@ -59,23 +59,24 @@ function buyHashtag(){
 	var buttonNum = event.target.id;
 	var tag;
 
-	if (buttonNum = "b1"){tag = 1;}
-	else if (buttonNum = "b2"){tag = 2;}
-	else if (buttonNum = "b3"){tag = 3;}
-	else if (buttonNum = "b4"){tag = 4;}
-	else if (buttonNum = "b5"){tag = 5;}
-	else if (buttonNum = "b6"){tag = 6;}
-	else if (buttonNum = "b7"){tag = 7;}
-	else if (buttonNum = "b8"){tag = 8;}
-	else if (buttonNum = "b9"){tag = 9;}
-	else if (buttonNum = "b10"){tag = 10;}
+	
+	if (buttonNum = "b1"){tag = "therock";}
+	else if (buttonNum = "b2"){tag = "choi_seung_hyun_tttop";}
+	else if (buttonNum = "b3"){tag = "katyperry";}
+	else if (buttonNum = "b4"){tag = "beyonce";}
+	else if (buttonNum = "b5"){tag = "kyliejeenner";}
+	else if (buttonNum = "b6"){tag = "mileycyrus";}
+	else if (buttonNum = "b7"){tag = "kimkardashian";}
+	else if (buttonNum = "b8"){tag = "justinbieber";}
+	else if (buttonNum = "b9"){tag = "selenagomez";}
+	else if (buttonNum = "b10"){tag = "kanyewest";}
 
   var profit = marketInstas[tag]["current"];
   userCoin -= profit;
   var count;
 
   var keys = Object.keys(marketInstas);
-  var celeb = keys[tag];
+  var celeb = tag;
 
   //adds bought hashtags to userQuantity
   for (key in userQuantity){
@@ -109,4 +110,8 @@ function buyHashtag(){
 	  var a = document.getElementById("coins3");
       a.innerHTML = userCoin;
 	  return userCoin;
+	}
+
+	function getStocks(){
+	  return userQuantity;
 	}

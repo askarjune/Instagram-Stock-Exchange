@@ -36,7 +36,7 @@
       <li><a href="about.html">About</a></li>
 
     </ul>
-    <p class="navbar-text">My Coins: #100</p>
+    <p class="navbar-text">My Coins: #222</p>
   </nav>
 
   <div class="container">
@@ -96,47 +96,12 @@
        <td>5%</td>
        <td><button type="button" class="btn btn-default"  id="b5" onclick="sellHashtag()"> Sell </button></td>
      </tr>
-     <tr>
-       <td>6.</td>
-       <td>PEPE</td>
-       <td>$5000</td>
-       <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b6" onclick="sellHashtag()"> Sell </button></td>
-     </tr>
-     <tr>
-       <td>7.</td>
-       <td>PEPE</td>
-       <td>$5000</td>
-       <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b7" onclick="sellHashtag()"> Sell </button></td>
-     </tr>
-     <tr>
-       <td>8.</td>
-       <td>PEPE</td>
-       <td>$5000</td>
-       <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b8" onclick="sellHashtag()"> Sell </button></td>
-     </tr>
-     <tr>
-       <td>9.</td>
-       <td>PEPE</td>
-       <td>$5000</td>
-       <td>5%</td>
-       <td><button type="button" class="btn btn-default"  id="b9" onclick="sellHashtag()"> Sell </button></td>
-     </tr>
-     <tr>
-       <td>10.</td>
-       <td>PEPE</td>
-       <td>$5000</td>
-       <td>5%</td>
-       <td><button type="button" class="btn btn-default" id="b10" onclick="sellHashtag()"> Sell </button></td>
-     </tr>
    <!--</tbody>-->
  </table>
 
 
 <script>
-file = getUserQuantities();
+file = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}, "selenagomez": {"current": 770, "20values": [308, 308, 359, 374, 389, 426, 431, 477, 506, 528, 550, 577, 570, 617, 638, 640, 670, 716, 751, 770], "growth": 19, "previous": 751}};
 
 function updateMarketTable(file){
   i = 1;
@@ -144,7 +109,7 @@ function updateMarketTable(file){
   for (var key in file) {
 
       memecol = [key];
-      alert(memecol);
+ 
       var value = file[key]["current"];
       var growth = file[key]["growth"]
       //name
@@ -205,7 +170,7 @@ updateMarketTable(file);
 
 
     <script>
-    var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}};
+    var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}, "selenagomez": {"current": 770, "20values": [308, 308, 359, 374, 389, 426, 431, 477, 506, 528, 550, 577, 570, 617, 638, 640, 670, 716, 751, 770], "growth": 19, "previous": 751}};
     var memecols = [];
     for (var key in memesjson) {
       memecol = [key];
@@ -224,8 +189,6 @@ updateMarketTable(file);
     </script>
 
   </div>
-
-      <button type="button" class="btn btn-default"> Buy </button>
 
     </div>
 
