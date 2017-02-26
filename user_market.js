@@ -11,7 +11,7 @@ var userNum = {};
 
 userCoin = 100;
 file = "yeehaw_memes.json"
-userQuantity = {};
+userQuantity = [];
 
 
 
