@@ -104,7 +104,6 @@ function buyHashtag(){
 		getCoins(userCoin);
 	}
 
-<<<<<<< HEAD
  
 }
 
@@ -113,9 +112,7 @@ function getUserQuantities() {
 }
 
 function getCoins(userCoin){
-=======
-	function getCoins(userCoin){
->>>>>>> origin/master
+
 	  var a = document.getElementById("coins1");
       a.innerHTML = userCoin;
 	  var a = document.getElementById("coins2");
@@ -123,9 +120,8 @@ function getCoins(userCoin){
 	  var a = document.getElementById("coins3");
       a.innerHTML = userCoin;
 	  return userCoin;
-	}
-<<<<<<< HEAD
-=======
+
+
 
 }
->>>>>>> origin/master
+
