@@ -27,10 +27,15 @@ function sellHashtag(){
 	var tag;
 	
 	if (buttonNum = "b1"){tag = 1;}
-	else if (buttonNum ="b2"){tag = 2;}
-	else if (buttonNum ="b3"){tag = 3;}
-	else if (buttonNum ="b4"){tag = 4;}
-	else if (buttonNum ="b5"){tag = 5;}
+	else if (buttonNum = "b2"){tag = 2;}
+	else if (buttonNum = "b3"){tag = 3;}
+	else if (buttonNum = "b4"){tag = 4;}
+	else if (buttonNum = "b5"){tag = 5;}
+	else if (buttonNum = "b6"){tag = 6;}
+	else if (buttonNum = "b7"){tag = 7;}
+	else if (buttonNum = "b8"){tag = 8;}
+	else if (buttonNum = "b9"){tag = 9;}
+	else if (buttonNum = "b10"){tag = 10;}
 
 
 	var keys = Object.keys(marketInstas);
