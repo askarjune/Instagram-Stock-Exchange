@@ -48,6 +48,8 @@ function sellHashtag(){
     delete userQuantity[tag];
   }
 
+ getCoin(userCoin);
+
 
 }
 
@@ -94,6 +96,17 @@ function buyHashtag(){
 			value: 1
 			
 		})
+		getCoin(userCoin);
+	}
+	
+	function getCoins(userCoin){
+	  var a = document.getElementById("coins1");
+      a.innerHTML = userCoin;
+	  var a = document.getElementById("coins2");
+      a.innerHTML = userCoin;
+	  var a = document.getElementById("coins3");
+      a.innerHTML = userCoin;
+	  return userCoin;
 	}
  
 }
