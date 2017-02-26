@@ -12,7 +12,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script type="text/javascript" src="user_market.js"></script>
-  <script type="text/javascript" src="yeehaw.js"></script>
 
   <!-- c3 charts stuff -->
   <!--c3 charts stuff -->
@@ -135,10 +134,31 @@
  </table>
 
 
+<script>
+file = getUserQuantities();
 
-<script type="text/javascript">
+function updateMarketTable(file){
+  i = 1;
 
-updateMarketTable();
+  for (var key in file) {
+
+      memecol = [key];
+      alert(memecol);
+      var value = file[key]["current"];
+      var growth = file[key]["growth"]
+      //name
+      var a = document.getElementById("marketTable").rows[i].cells;
+      a[1].innerHTML = memecol;
+      //market value
+      a[2].innerHTML = value;
+      //growth
+      a[3].innerHTML = growth;
+      i++;
+  }
+}
+
+
+updateMarketTable(file);
 </script>
 
 
