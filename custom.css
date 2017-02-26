@@ -1,23 +1,48 @@
 body {
+    padding: 20px;
     background-color: #040e14;
     font-family: 'Varela Round', sans-serif;
     color: #f8f1e9;
 }
 
+#popular {
+  width: 80%;
+}
+
+#yours {
+  width: 80%;
+}
+
+.c3 .c3-axis-x path, .c3 .c3-axis-x line {
+    stroke: #f8f1e9;
+}
+.c3 .c3-axis-y path, .c3 .c3-axis-y line {
+    stroke: #f8f1e9;
+}
+
 .c3-axis-y text {
-   fill: white;
+   fill: #f8f1e9;
+   font-family: 'Varela Round', sans-serif;
    font-size:12px;
 }
 .c3-axis-x text {
+    font-family: 'Varela Round', sans-serif;
     font-size:12px;
-    fill:white;
+    fill:#f8f1e9;
 }
 
 .c3-legend-item text {
-  fill: white;
+  fill: #f8f1e9;
+  font-family: 'Varela Round', sans-serif;
 }
 
-
+.c3-tooltip td {
+font-size:13px;
+color: #f8f1e9;
+font-family: 'Varela Round', sans-serif;
+padding: 3px 6px;
+background-color:#040e14;
+}
 
 .nav-inverse{
   background-color:#2a3435;

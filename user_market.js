@@ -8,6 +8,7 @@ PURPOSE: Hack@Smith Hackathon
 var userCoin;
 var userHashtags;
 var userQuantity;
+var fs = require('fs');
 
 userCoin = 100;
 file = "yeehaw_memes.json"
@@ -17,12 +18,12 @@ userQuantity = {"Pepe" : 5, "Here Come Dat Boi" : 10, "Forever Alone" : 1}
 //Market Side Implementation
 var marketHashtags;
 var marketValue;
+var marketGrowth;
 
 //reads JSON file to get current buy/sell data
-marketHashtags = ["instagram","selenagomez","taylorswift","arianagrande","beyonce","kimkardashian","cristiano","kyliejenner","justinbieber","therock"];
-
-marketValue = {"instagram" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagrande" : 0, "beyonce" : 0, "kimkardashian" : 0, "cristiano" : 0, "kyliejenner" : 0, "justinbieber" : 0, "therock" : 0}
-
+marketHashtags = ["katyperry","selenagomez","taylorswift","choi_seung_hyun_tttop","beyonce","kimkardashian","kanyewest","kyliejenner","justinbieber","therock"]
+marketValue = {"katyperry" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagrande" : 0, "beyonce" : 0, "kimkardashian" : 0, "kanyewest" : 0, "kyliejenner" : 0, "justinbieber" : 0, "therock" : 0}
+marketGrowth = {"katyperry" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagrande" : 0, "beyonce" : 0, "kimkardashian" : 0, "kanyewest" : 0, "kyliejenner" : 0, "justinbieber" : 0, "therock" : 0}
 
 //Functions
 
@@ -65,6 +66,10 @@ function buyHashtag(quantity, tag){
   }
 }
 
+function getMarkets() {
+  return marketHashtags;
+}
+
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
@@ -81,6 +86,7 @@ function readTextFile(file)
         }
     }
     rawFile.send(null);
+    return allText;
 }
 
 setInterval(readTextFile, 10000);

@@ -15,6 +15,9 @@
   <link href="c3.min.css" rel="stylesheet" type="text/css">
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
+  <!-- RIP -->
+  <script type="text/javascript" src="user_market.js"></script>
+
   <!-- customization, stylesheet things -->
   <link rel="stylesheet" href="custom.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
@@ -30,36 +33,92 @@
   <p class="navbar-text">My Coins: #100</p>
 </nav>
 
+<p style="text-align: center;">
+<h1>Inst@ck Exchange</h1>
+<h4>A Fun Learning Tool About the Stock Market based on #RealLife</h4>
+</p>
 
 <div class="row">
   <div class="col-sm-6">
-    <h1>Top Hashtags Today</h1>
-    <div id="test" background-color: 'white'></div>
+    <h1>Top Instas Today</h1>
+    <div id="popular"></div>
+
     <script>
-    var memesjson = {"therock": {"current": "78183854", "value": 13, "previous": "78183841"}, "cristiano": {"current": "91598564", "value": 38, "previous": "91598526"}, "instagram": {"current": "213969072", "value": 45, "previous": "213969027"}, "arianagrande": {"current": "97859277", "value": 46, "previous": "97859231"}, "kyliejenner": {"current": "87066214", "value": 9, "previous": "87066205"}, "beyonce": {"current": "95643739", "value": 34, "previous": "95643705"}, "taylorswift": {"current": "98051582", "value": 12, "previous": "98051570"}, "kimkardashian": {"current": "93368355", "value": 47, "previous": "93368308"}, "justinbieber": {"current": "78519022", "value": 5, "previous": "78519017"}, "selenagomez": {"current": "111191938", "value": 48, "previous": "111191890"}};
+
+    // var memesjson = (function() {
+    //     var json = null;
+    //     $.ajax({
+    //         'async': false,
+    //         'global': false,
+    //         'url': "file:///C:/Users/Alice/Documents/Instagram-Stock-Exchange/sample_point.json",
+    //         'dataType': "json",
+    //         'success': function (data) {
+    //             json = data;
+    //         }
+    //     });
+    //     return json;
+    // })();
+
+    var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}, "kyliejenner": {"current": 726, "20values": [392, 424, 449, 462, 472, 495, 494, 509, 523, 556, 571, 591, 622, 627, 646, 642, 672, 695, 710, 726], "growth": 16, "previous": 710}, "mileycyrus": {"current": 288, "20values": [145, 155, 163, 172, 186, 179, 180, 191, 201, 193, 210, 227, 227, 245, 242, 261, 256, 268, 281, 288], "growth": 7, "previous": 281}, "kimkardashian": {"current": 337, "20values": [84, 110, 138, 163, 166, 181, 200, 209, 216, 227, 235, 251, 269, 281, 281, 279, 298, 298, 328, 337], "growth": 9, "previous": 328}, "justinbieber": {"current": 720, "20values": [620, 608, 649, 637, 650, 651, 659, 663, 661, 684, 681, 681, 686, 703, 10, 697, 710, 719, 724, 720], "growth": -4, "previous": 724}, "selenagomez": {"current": 770, "20values": [308, 308, 359, 374, 389, 426, 431, 477, 506, 528, 550, 577, 570, 617, 638, 640, 670, 716, 751, 770], "growth": 19, "previous": 751}, "kanyewest": {"current": 403, "20values": [387, 388, 388, 390, 390, 389, 392, 395, 396, 396, 97, 398, 398, 400, 401, 402, 402, 398, 400, 403], "growth": 3, "previous": 400}};
 
     var memecols = [];
     for (var key in memesjson) {
-      var innerar = memesjson[key];
-      var memearr = [key, innerar["previous"], innerar["current"]];
-      memecols.push(memearr);
+      memecol = [key];
+      var valsarr = memesjson[key]["20values"];
+      for (num = 0; num < valsarr.length; num++) {
+        memecol.push(valsarr[num]);
+      }
+      memecols.push(memecol);
     }
     var chart = c3.generate({
-      'bindto': '#test',
+      'bindto': '#popular',
       'data': {
         'columns': memecols
       }
     });
-
     </script>
+
   </div>
 
   <div class="col-sm-6">
-    <h1>Your Hashtags</h1>
+    <h1>Your Instas</h1>
+    <div id="yours"></div>
+    <script>
+    var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}};
+    var memecols = [];
+    for (var key in memesjson) {
+      memecol = [key];
+      var valsarr = memesjson[key]["20values"];
+      for (num = 0; num < valsarr.length; num++) {
+        memecol.push(valsarr[num]);
+      }
+      memecols.push(memecol);
+    }
+    var chart = c3.generate({
+      'bindto': '#yours',
+      'data': {
+        'columns': memecols
+      }
+    });
+    </script>
+
   </div>
 </div>
+<br/>
+<p>
+<div class="container-fluid">
+  <h1>About Stocks</h1>
+  <h3>What's a Stock Exchange?</h3>
+A stock exchange is a market in which securities are bought and sold. In this case "securities" are stocks in an Instagram celebrity. <br/><br/>
 
+<h3>How do I use the Stock Exchange</h3>
+To gain coins, buy stocks in a celebrity you think will be gaining more followers. Your goal is to sell your stock for a higher price than you bought it for to make a profit.<br/><br/>
 
+<h3>Any tips for beginners?</h3>
+Pro tip: Invest in stocks with less followers but a high growth rate. If they continue rising, the stock will lead to high PROFIT$.
+
+</div>
+</p>
 </body>
 </center>
 </html>
