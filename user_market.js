@@ -18,10 +18,12 @@ userQuantity = {"Pepe" : 5, "Here Come Dat Boi" : 10, "Forever Alone" : 1}
 //Market Side Implementation
 var marketHashtags;
 var marketValue;
+var marketGrowth;
 
 //reads JSON file to get current buy/sell data
 marketHashtags = ["katyperry","selenagomez","taylorswift","choi_seung_hyun_tttop","beyonce","kimkardashian","kanyewest","kyliejenner","justinbieber","therock"]
 marketValue = {"katyperry" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagrande" : 0, "beyonce" : 0, "kimkardashian" : 0, "kanyewest" : 0, "kyliejenner" : 0, "justinbieber" : 0, "therock" : 0}
+marketGrowth = {"katyperry" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagrande" : 0, "beyonce" : 0, "kimkardashian" : 0, "kanyewest" : 0, "kyliejenner" : 0, "justinbieber" : 0, "therock" : 0}
 
 //Functions
 
@@ -62,6 +64,10 @@ function buyHashtag(quantity, tag){
       });
     }
   }
+}
+
+function getMarkets() {
+  return marketHashtags;
 }
 
 function readTextFile(file)
