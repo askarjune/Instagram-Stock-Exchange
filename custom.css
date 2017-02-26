@@ -5,6 +5,11 @@ body {
     color: #f8f1e9;
 }
 
+.background {
+  /*background-image: url("world-map-png-35423.png");*/
+  background-image: url("worldmapsolid.png");
+}
+
 .faq {
   margin: 20px;
 }

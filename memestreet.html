@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<div class="background">
 <head>
   <title>inSt@ck - Dashboard</title>
   <meta charset="utf-8">
@@ -21,7 +22,6 @@
   <link rel="stylesheet" href="custom.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 </head>
-
 <body>
 
 <nav class="navbar navbar-inverse">
@@ -35,9 +35,9 @@
 
 <p style="text-align: center;">
  <h1>Inst@ck Exchange:</h1>
- <h4>A Fun Learning Tool About the Stock Market based on #RealLife</h4> 
+ <h4>A Fun Learning Tool About the Stock Market based on #RealLife</h4>
 </p>
-  
+
 <div class="row">
   <div class="col-sm-6">
 
@@ -47,55 +47,6 @@
     <div id="popular"></div>
   </center>
     <script>
-
-    // var memesjson = (function() {
-    //     var json = null;
-    //     $.ajax({
-    //         'async': false,
-    //         'global': false,
-    //         'url': "file:///C:/Users/Alice/Documents/Instagram-Stock-Exchange/sample_point.json",
-    //         'dataType': "json",
-    //         'success': function (data) {
-    //             json = data;
-    //         }
-    //     });
-    //     return json;
-    // })();
-
-    function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    var file = "yeehaw.json";
-    
-    rawFile.onreadystatechange = function ()
-    {
-        if(this.readyState === 4)
-        {
-            if(this.status === 200 || this.status == 0)
-            {
-                //var allText = rawFile.responseText;
-                var result = JSON.parse(this.responseText);
-                alert(this.responseText);
-
-                // var dic = {};
-
-                // for (var i = 0, d; i < result.dic.length; i++) {
-                //    d = result.dic[i];
-                //    dic[ i.20values ] = emp;
-                // }
-                // alert(dic);
-
-                //console.log(employees[56].name);       // logs "Harry"
-                //console.log(employees[56].department);
-            }
-        }
-    }
-    rawFile.open("GET", file, true);
-    rawFile.send();
-    return result;
-}
-
-    //var memesjsons = readTextFile("yeehaw_memes.json")
 
     var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}, "kyliejenner": {"current": 726, "20values": [392, 424, 449, 462, 472, 495, 494, 509, 523, 556, 571, 591, 622, 627, 646, 642, 672, 695, 710, 726], "growth": 16, "previous": 710}, "mileycyrus": {"current": 288, "20values": [145, 155, 163, 172, 186, 179, 180, 191, 201, 193, 210, 227, 227, 245, 242, 261, 256, 268, 281, 288], "growth": 7, "previous": 281}, "kimkardashian": {"current": 337, "20values": [84, 110, 138, 163, 166, 181, 200, 209, 216, 227, 235, 251, 269, 281, 281, 279, 298, 298, 328, 337], "growth": 9, "previous": 328}, "justinbieber": {"current": 720, "20values": [620, 608, 649, 637, 650, 651, 659, 663, 661, 684, 681, 681, 686, 703, 10, 697, 710, 719, 724, 720], "growth": -4, "previous": 724}, "selenagomez": {"current": 770, "20values": [308, 308, 359, 374, 389, 426, 431, 477, 506, 528, 550, 577, 570, 617, 638, 640, 670, 716, 751, 770], "growth": 19, "previous": 751}, "kanyewest": {"current": 403, "20values": [387, 388, 388, 390, 390, 389, 392, 395, 396, 396, 97, 398, 398, 400, 401, 402, 402, 398, 400, 403], "growth": 3, "previous": 400}};
 
@@ -171,4 +122,5 @@
 </p>
 
 </body>
+</div>
 </html>
