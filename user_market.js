@@ -19,9 +19,9 @@ var marketHashtags;
 var marketValue;
 
 //reads JSON file to get current buy/sell data
-marketHashtags = ["Pepe", "Here Come Dat Boi", "Forever Alone", "BirdsRightsActivists"];
+marketHashtags = ["instagram","selenagomez","taylorswift","arianagrande","beyonce","kimkardashian","cristiano","kyliejenner","justinbieber","therock"];
 
-marketValue = {"Pepe" : 500, "Here Come Dat Boi" : 20, "Forever Alone" : 5000}
+marketValue = {"instagram" : 0, "selenagomez" : 0, "taylorswift" : 0, "arianagrande" : 0, "beyonce" : 0, "kimkardashian" : 0, "cristiano" : 0, "kyliejenner" : 0, "justinbieber" : 0, "therock" : 0}
 
 
 //Functions
