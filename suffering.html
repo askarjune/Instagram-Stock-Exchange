@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>inSt@ck - Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrap stuff -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!--c3 charts stuff -->
+  <script type="text/javascript" src="c3.min.js"></script>
+  <link href="c3.min.css" rel="stylesheet" type="text/css">
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+  <!-- RIP
+  <script type="text/javascript" src="user_market.js"></script>-->
+
+  <!-- customization, stylesheet things -->
+  <link rel="stylesheet" href="custom.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+    <li><a href="memestreet.html">inSt@ck Dashboard</a></li>
+    <li><a href="buy.html">Buy</a></li>
+    <li><a href="mystocks.html">My Stocks</a></li>
+  </ul>
+  <p class="navbar-text">My Coins: #100</p>
+</nav>
+
+<p style="text-align: center;">
+ <h1>Inst@ck Exchange:</h1>
+ <h4>A Fun Learning Tool About the Stock Market based on #RealLife</h4> 
+</p>
+  
+<div class="row">
+  <div class="col-sm-6">
+
+    <center style="margin:10px">
+
+    <h1>Top Instas Today</h1>
+    <div id="popular"></div>
+  </center>
+    <script>
+
+    // var memesjson = (function() {
+    //     var json = null;
+    //     $.ajax({
+    //         'async': false,
+    //         'global': false,
+    //         'url': "file:///C:/Users/Alice/Documents/Instagram-Stock-Exchange/sample_point.json",
+    //         'dataType': "json",
+    //         'success': function (data) {
+    //             json = data;
+    //         }
+    //     });
+    //     return json;
+    // })();
+
+ function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    var file = "yeehaw.json";
+    rawFile.open("GET", file, true);
+
+    // ??????????????????
+    rawFile.setRequestHeader("Content-type", "application/json");
+
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                //var allText = rawFile.responseText;
+                var result = JSON.parse(rawFile.responseText);
+                alert(rawFile.responseText);
+
+                // var dic = {};
+
+                // for (var i = 0, d; i < result.dic.length; i++) {
+                //    d = result.dic[i];
+                //    dic[ i.20values ] = emp;
+                // }
+                // alert(dic);
+
+                //console.log(employees[56].name);       // logs "Harry"
+                //console.log(employees[56].department);
+            }
+        }
+    }
+
+    rawFile.send();
+    return result;
+}
+
+    var memesjsons = readTextFile("yeehaw.json");
+
+    var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}, "kyliejenner": {"current": 726, "20values": [392, 424, 449, 462, 472, 495, 494, 509, 523, 556, 571, 591, 622, 627, 646, 642, 672, 695, 710, 726], "growth": 16, "previous": 710}, "mileycyrus": {"current": 288, "20values": [145, 155, 163, 172, 186, 179, 180, 191, 201, 193, 210, 227, 227, 245, 242, 261, 256, 268, 281, 288], "growth": 7, "previous": 281}, "kimkardashian": {"current": 337, "20values": [84, 110, 138, 163, 166, 181, 200, 209, 216, 227, 235, 251, 269, 281, 281, 279, 298, 298, 328, 337], "growth": 9, "previous": 328}, "justinbieber": {"current": 720, "20values": [620, 608, 649, 637, 650, 651, 659, 663, 661, 684, 681, 681, 686, 703, 10, 697, 710, 719, 724, 720], "growth": -4, "previous": 724}, "selenagomez": {"current": 770, "20values": [308, 308, 359, 374, 389, 426, 431, 477, 506, 528, 550, 577, 570, 617, 638, 640, 670, 716, 751, 770], "growth": 19, "previous": 751}, "kanyewest": {"current": 403, "20values": [387, 388, 388, 390, 390, 389, 392, 395, 396, 396, 97, 398, 398, 400, 401, 402, 402, 398, 400, 403], "growth": 3, "previous": 400}};
+
+    var memecols = [];
+    for (var key in memesjsons) {
+      memecol = [key];
+      var valsarr = memesjsons[key]["20values"];
+      for (num = 0; num < valsarr.length; num++) {
+        memecol.push(valsarr[num]);
+      }
+      memecols.push(memecol);
+    }
+    var chart = c3.generate({
+      'bindto': '#popular',
+      'data': {
+        'columns': memecols
+      }
+    });
+    </script>
+
+  </div>
+
+  <div class="col-sm-6">
+    <center style="margin:10px">
+    <h1>Your Instas</h1>
+    <div id="yours"></div>
+  </center>
+    <script>
+    var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}};
+    var memecols = [];
+    for (var key in memesjson) {
+      memecol = [key];
+      var valsarr = memesjson[key]["20values"];
+      for (num = 0; num < valsarr.length; num++) {
+        memecol.push(valsarr[num]);
+      }
+      memecols.push(memecol);
+    }
+    var chart = c3.generate({
+      'bindto': '#yours',
+      'data': {
+        'columns': memecols
+      }
+    });
+    </script>
+
+  </div>
+</div>
+
+<p>
+<hr>
+
+<div class="faq">
+
+<h1 style="margin:15px;">About Stocks</h1>
+
+<div class="col-md-4">
+  <h3>What's a Stock Exchange?</h3>
+  <p>A stock exchange is a market in which securities are bought and sold. In this case "securities" are stocks in an Instagram celebrity. </p>
+</div>
+
+<div class="col-md-4">
+  <h3>How do I get coins?</h3>
+  <p>To gain coins, buy stocks in a celebrity you think will be gaining more followers. Your goal is to sell your stock for a higher price than you bought it for to make a profit.</p>
+</div>
+
+<div class="col-md-4">
+  <h3>Here's a tip!</h3>
+<p>Invest in stocks with less followers but a high growth rate. If they continue rising, the stock will lead to high PROFIT$.</p>
+</div>
+
+</div>
+</p>
+
+</body>
+</html>
