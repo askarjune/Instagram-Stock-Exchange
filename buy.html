@@ -30,7 +30,7 @@
     <li><a href="buy.html">Buy</a></li>
     <li><a href="mystocks.html">My Stocks</a></li>
   </ul>
-  <p class="navbar-text">My Coins: #100</p>
+  <p class="navbar-text">My Coins: #1000</p>
 </nav>
 
 <div class="container">
@@ -118,6 +118,16 @@
      </tr>
    </tbody>
  </table>
+
+ <script>
+ var string = $('html').attr('class');
+var array = string.split(' ');
+var arrayLength = parseInt(array.length);
+
+for (i=0; i<=arrayLength; i++) {
+  $(".table table") .append('<tr><td>'+array[i]+'</td></tr>') 
+}
+ </script>
 </div>
 
 <div class="container-fluid" id = "right">
