@@ -30,6 +30,7 @@ def testInstagramData(usernames, dic):
 	    		dic[u]["previous"] = 0
 	    		dic[u]["current"] = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][:-1])
 	    		dic[u]["20values"] = []
+	    		dic[u]["growth"] = 0
 	    	# else, update the current dictionary value
 	    	else:
 	    		# replace "previous" with the current value
@@ -38,6 +39,8 @@ def testInstagramData(usernames, dic):
 	    		# replace "current" with the new value
 	    		dic[u]["current"] = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][:-1])
 
+	    		dic[u]["growth"] = (int(dic[u]["current"]) - int(dic[u]["previous"]))
+	    		
 	    		if(len(dic[u]["20values"]) < 20):
 	    			dic[u]["20values"].append(dic[u]["current"])
 	    		else:
