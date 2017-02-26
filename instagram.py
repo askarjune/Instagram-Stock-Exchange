@@ -46,7 +46,7 @@ def testInstagramData(usernames, dic):
 	
 	return dic
 
-users = ["katyperry","selenagomez","mileycyrus","pewdiepie","beyonce","kimkardashian","kanyewest","kyliejenner","justinbieber","therock"]
+users = ["katyperry","selenagomez","mileycyrus","choi_seung_hyun_tttop","beyonce","kimkardashian","kanyewest","kyliejenner","justinbieber","therock"]
 
 dic = {}
 dic = testInstagramData(users, dic)
