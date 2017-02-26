@@ -22,10 +22,10 @@ var marketInstas = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 
 //Functions
 
 function sellHashtag(){
-	
+
 	var buttonNum = event.target.id;
 	var tag;
-	
+
 	if (buttonNum = "b1"){tag = 1;}
 	else if (buttonNum ="b2"){tag = 2;}
 	else if (buttonNum ="b3"){tag = 3;}
@@ -35,30 +35,30 @@ function sellHashtag(){
 
 	var keys = Object.keys(marketInstas);
 	var celeb = keys[tag];
-	
-	
+
+
     var profit = marketInstas[celeb]["current"];
     userCoin += profit;
-	
+
     //removes sold hashtags from userQuantity
     delete userQuantity[celeb];
-  
+
   //removes hashtag from userQuantity if user has none
   if (userQuantity[celeb] <= 0){
     delete userQuantity[tag];
   }
 
- getCoin(userCoin);
+ getCoins(userCoin);
 
 
 }
 
 
 function buyHashtag(){
-	
+
 	var buttonNum = event.target.id;
 	var tag;
-	
+
 	if (buttonNum = "b1"){tag = 1;}
 	else if (buttonNum = "b2"){tag = 2;}
 	else if (buttonNum = "b3"){tag = 3;}
@@ -69,19 +69,19 @@ function buyHashtag(){
 	else if (buttonNum = "b8"){tag = 8;}
 	else if (buttonNum = "b9"){tag = 9;}
 	else if (buttonNum = "b10"){tag = 10;}
-	
+
   var profit = marketInstas[tag]["current"];
   userCoin -= profit;
   var count;
-  
+
   var keys = Object.keys(marketInstas);
   var celeb = keys[tag];
-  
+
   //adds bought hashtags to userQuantity
   for (key in userQuantity){
 	count++;
    }
-   
+
    if (count > 5){
 	   alert("You already own the max instas you can have!");
    }
@@ -90,15 +90,15 @@ function buyHashtag(){
 			key:   celeb[tag],
 			value: marketInstas[tag]
 		});
-		
+
 		userNum.push({
 			key:celeb[tag],
 			value: 1
-			
+
 		})
-		getCoin(userCoin);
+		getCoins(userCoin);
 	}
-	
+
 	function getCoins(userCoin){
 	  var a = document.getElementById("coins1");
       a.innerHTML = userCoin;
@@ -108,7 +108,5 @@ function buyHashtag(){
       a.innerHTML = userCoin;
 	  return userCoin;
 	}
- 
+
 }
-
-
