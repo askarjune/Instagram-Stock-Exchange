@@ -33,8 +33,9 @@
 
 <div class="row">
   <div class="col-sm-6">
-    <h1>Top Hashtags Today</h1>
-    <div id="test" background-color: 'white'></div>
+    <h1>Top Instas Today</h1>
+    <div id="popular"></div>
+
     <script>
     var memesjson = {"therock": {"current": "78183854", "value": 13, "previous": "78183841"}, "cristiano": {"current": "91598564", "value": 38, "previous": "91598526"}, "instagram": {"current": "213969072", "value": 45, "previous": "213969027"}, "arianagrande": {"current": "97859277", "value": 46, "previous": "97859231"}, "kyliejenner": {"current": "87066214", "value": 9, "previous": "87066205"}, "beyonce": {"current": "95643739", "value": 34, "previous": "95643705"}, "taylorswift": {"current": "98051582", "value": 12, "previous": "98051570"}, "kimkardashian": {"current": "93368355", "value": 47, "previous": "93368308"}, "justinbieber": {"current": "78519022", "value": 5, "previous": "78519017"}, "selenagomez": {"current": "111191938", "value": 48, "previous": "111191890"}};
 
@@ -45,17 +46,35 @@
       memecols.push(memearr);
     }
     var chart = c3.generate({
-      'bindto': '#test',
+      'bindto': '#popular',
       'data': {
         'columns': memecols
       }
     });
-
     </script>
+
   </div>
 
   <div class="col-sm-6">
-    <h1>Your Hashtags</h1>
+    <h1>Your Instas</h1>
+    <div id="yours"></div>
+    <script>
+    var memesjson = {"therock": {"current": "78183854", "value": 13, "previous": "78183841"}, "beyonce": {"current": "95643739", "value": 34, "previous": "95643705"}, "kimkardashian": {"current": "93368355", "value": 47, "previous": "93368308"}, "selenagomez": {"current": "111191938", "value": 48, "previous": "111191890"}};
+
+    var memecols = [];
+    for (var key in memesjson) {
+      var innerar = memesjson[key];
+      var memearr = [key, innerar["previous"], innerar["current"]];
+      memecols.push(memearr);
+    }
+    var chart = c3.generate({
+      'bindto': '#yours',
+      'data': {
+        'columns': memecols
+      }
+    });
+    </script>
+
   </div>
 </div>
 
