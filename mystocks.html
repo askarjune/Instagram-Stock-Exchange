@@ -11,11 +11,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <script type="text/javascript" src="user_market.js"></script>
+
   <!-- c3 charts stuff -->
   <!--c3 charts stuff -->
   <script type="text/javascript" src="c3.min.js"></script>
   <link href="c3.min.css" rel="stylesheet" type="text/css">
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
 
   <!-- customization, stylesheet things 
   <link rel="stylesheet" href="custom2.css" type="text/css" />
@@ -32,7 +35,7 @@
       <li><a href="buy.html">Buy</a></li>
       <li><a href="mystocks.html">My Stocks</a></li>
     </ul>
-    <p class="navbar-text">My Coins: #100</p>
+    <p class="navbar-text">My Coins: #1000</p>
   </nav>
 
   <div class="container">
@@ -41,94 +44,125 @@
 
 
     <h1>My Instas</h1>
-    <p>Here are your Instas, click View to see selling option.</p>
+    <p>Here are your Instas, click Sell to sell your stock.</p>
 
 	<div class="row">
 		<div class="col-sm-6">
 
     <table class="table table-striped" id="userTable">
-     <thead>
-       <tr class='clickable-row'>
+     <!--<thead>-->
+       <tr>
          <th></th>
          <th>Name</th>
          <th>Market Value</th>
          <th>Growth</th>
          <th></th>
        </tr>
-     </thead>
-     <tbody>
-       <tr class='clickable-row'>
+     <!--</thead>-->
+     <!--<tbody>-->
+       <tr>
          <td>1.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+         <td><button type="button" class="btn btn-default" id="b1" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>2.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+         <td><button type="button" class="btn btn-default" id="b2" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>3.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+          <td><button type="button" class="btn btn-default" id="b3" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>4.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+          <td><button type="button" class="btn btn-default" id="b4" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>5.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+          <td><button type="button" class="btn btn-default" id="b5" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>6.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+          <td><button type="button" class="btn btn-default" id="b6" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>7.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+          <td><button type="button" class="btn btn-default" id="b7" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>8.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+          <td><button type="button" class="btn btn-default" id="b8" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>9.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+          <td><button type="button" class="btn btn-default" id="b9" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-       <tr class='clickable-row'>
+       <tr>
          <td>10.</td>
          <td>PEPE</td>
          <td>$5000</td>
          <td>5%</td>
-         <td><button type="button" class="btn btn-default"> View </button></td>
+          <td><button type="button" class="btn btn-default" id="b10" onclick="sellHashtag()"> Sell </button></td>
        </tr>
-     </tbody>
+     <!--/tbody>-->
    </table>
+
+   <script>
+
+   file = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": "-59", "previous": 85}, "choi_seung_hyun_tttop": {"current": "522", "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": "6", "previous": 516}, "katyperry": {"current": "427", "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": "-1", "previous": 428}, "beyonce": {"current": "533", "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": "15", "previous": 518}};
+
+   function updateMarketTable(file){
+  i = 1;
+
+  for (var key in file) {
+
+      memecol = [key];
+      var value = file[key]["current"];
+      var growth = file[key]["growth"]
+      //name
+      var a = document.getElementById("marketTable").rows[i].cells;
+      a[1].innerHTML = memecol;
+      //market value
+      a[2].innerHTML = value;
+      //growth
+      a[3].innerHTML = growth;
+      i++;
+  }
+}
+
+
+updateMarketTable(file);
+
+
+   </script>
+
+
   </div>
   
   	<center>
