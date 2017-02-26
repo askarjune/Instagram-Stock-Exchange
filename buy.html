@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <center>
+<div class="background">
 <head>
   <title>inSt@ck - Buy</title>
   <meta charset="utf-8">
@@ -10,19 +11,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <!-- c3 charts stuff
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
-  <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css"-->
-
+<!--c3 charts stuff -->
+  <script type="text/javascript" src="c3.min.js"></script>
+  <link href="c3.min.css" rel="stylesheet" type="text/css">
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  
+  
   <!-- RIP -->
   <script type="text/javascript" src="user_market.js"></script>
 
   <!-- customization, stylesheet things -->
-  <link rel="stylesheet" href="buy_sell.css" type="text/css" />
-  <script src="user_market.js"></script>
+  <link rel="stylesheet" href="buy_sell.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 
+  <!-- <script src="user_market.js"></script> -->
+  
 </head>
 <body>
 
@@ -39,15 +42,11 @@
 
 </div>
 
-
-<div class="container-fluid" id="left">
-  <h1>Insta Market</h1>
+ <h1>Insta Market</h1>
   <p>Here are available Instas, click View to see buying options.</p>
 
-  <!DOCTYPE html>
-  <html>
-  <body>
-
+  <div class="row">
+		<div class="col-sm-6">
   <table class="table table-striped" id="marketTable">
   <!-- <thead>-->
      <tr>
@@ -132,7 +131,6 @@
    <!--</tbody>-->
  </table>
 
-
 <script>
 file = {"therock": {"current": "78160595", "20values": ["78160251", "78160268", "78160296", "78160323", "78160340", "78160358", "78160384", "78160415", "78160438", "78160443", "78160455", "78160480", "78160494", "78160501", "78160528", "78160541", "78160554", "78160562", "78160561", "78160595"], "previous": "78160561"}, "katyperry": {"current": "60779747", "20values": ["60779616", "60779641", "60779646", "60779652", "60779645", "60779648", "60779671", "60779684", "60779680", "60779688", "60779699", "60779700", "60779709", "60779710", "60779723", "60779708", "60779731", "60779747", "60779751", "60779747"], "previous": "60779751"}, "beyonce": {"current": "95657933", "20values": ["95657630", "95657659", "95657682", "95657711", "95657711", "95657721", "95657744", "95657744", "95657761", "95657787", "95657797", "95657817", "95657828", "95657841", "95657859", "95657868", "95657899", "95657899", "95657908", "95657933"], "previous": "95657908"}, "kyliejenner": {"current": "87049951", "20values": ["87049604", "87049628", "87049642", "87049651", "87049656", "87049678", "87049712", "87049721", "87049732", "87049751", "87049766", "87049795", "87049813", "87049837", "87049868", "87049881", "87049923", "87049918", "87049948", "87049951"], "previous": "87049948"}, "mileycyrus": {"current": "61041366", "20values": ["61041195", "61041195", "61041208", "61041230", "61041244", "61041247", "61041256", "61041275", "61041276", "61041282", "61041289", "61041288", "61041297", "61041313", "61041314", "61041322", "61041332", "61041349", "61041358", "61041366"], "previous": "61041358"}, "kimkardashian": {"current": "93385174", "20values": ["93384817", "93384854", "93384875", "93384894", "93384910", "93384929", "93384950", "93384975", "93384983", "93385003", "93385011", "93385032", "93385061", "93385073", "93385086", "93385095", "93385114", "93385115", "93385145", "93385174"], "previous": "93385145"}, "justinbieber": {"current": "78519972", "20values": ["78519810", "78519821", "78519831", "78519852", "78519865", "78519883", "78519882", "78519885", "78519885", "78519885", "78519898", "78519915", "78519935", "78519937", "78519932", "78519924", "78519934", "78519961", "78519960", "78519972"], "previous": "78519960"}, "selenagomez": {"current": "111215807", "20values": ["111215390", "111215431", "111215453", "111215482", "111215481", "111215514", "111215560", "111215561", "111215581", "111215601", "111215610", "111215636", "111215651", "111215671", "111215712", "111215744", "111215760", "111215765", "111215779", "111215807"], "previous": "111215779"}, "kanyewest": {"current": "2476077", "20values": ["2475979", "2475980", "2475982", "2475982", "2476069", "2476070", "2476072", "2476070", "2476072", "2476073", "2476074", "2476073", "2476074", "2476075", "2476074", "2476076", "2476076", "2476078", "2476079", "2476077"], "previous": "2476079"}, "pewdiepie": {"current": "11921335", "20values": ["11921297", "11921299", "11921302", "11921306", "11921311", "11921309", "11921314", "11921314", "11921312", "11921315", "11921318", "11921322", "11921324", "11921327", "11921332", "11921334", "11921334", "11921331", "11921331", "11921335"], "previous": "11921331"}};
 
@@ -158,21 +156,37 @@ function updateMarketTable(file){
 
 updateMarketTable(file);
 </script>
-
-
-
 </div>
 
-<div class="container-fluid" id = "right">
-  <h1>GRAPH GOES HERE</h1>
-  <img src=""></img>
+  <h1>Top Instas</h1>
 
+<div class="col-sm-6">
+  	<div id="yours">
+  <!-- <img src=""></img> -->
+   <script>
 
+    var memesjson = {"therock": {"current": 26, "20values": [810, 829, 836, 847, 858, 872, 884, 909, 920, 948, 967, 969, 984, 1, 5, 27, 51, 66, 85, 26], "growth": -59, "previous": 85}, "choi_seung_hyun_tttop": {"current": 522, "20values": [476, 479, 485, 484, 487, 487, 486, 487, 491, 492, 496, 495, 498, 504, 505, 509, 514, 516, 516, 522], "growth": 6, "previous": 516}, "katyperry": {"current": 427, "20values": [378, 382, 393, 389, 391, 84, 388, 385, 387, 396, 396, 396, 405, 401, 399, 400, 411, 416, 428, 427], "growth": -1, "previous": 428}, "beyonce": {"current": 533, "20values": [347, 360, 64, 378, 399, 411, 421, 412, 412, 419, 433, 440, 41, 447, 470, 470, 496, 502, 518, 533], "growth": 15, "previous": 518}, "kyliejenner": {"current": 726, "20values": [392, 424, 449, 462, 472, 495, 494, 509, 523, 556, 571, 591, 622, 627, 646, 642, 672, 695, 710, 726], "growth": 16, "previous": 710}, "mileycyrus": {"current": 288, "20values": [145, 155, 163, 172, 186, 179, 180, 191, 201, 193, 210, 227, 227, 245, 242, 261, 256, 268, 281, 288], "growth": 7, "previous": 281}, "kimkardashian": {"current": 337, "20values": [84, 110, 138, 163, 166, 181, 200, 209, 216, 227, 235, 251, 269, 281, 281, 279, 298, 298, 328, 337], "growth": 9, "previous": 328}, "justinbieber": {"current": 720, "20values": [620, 608, 649, 637, 650, 651, 659, 663, 661, 684, 681, 681, 686, 703, 10, 697, 710, 719, 724, 720], "growth": -4, "previous": 724}, "selenagomez": {"current": 770, "20values": [308, 308, 359, 374, 389, 426, 431, 477, 506, 528, 550, 577, 570, 617, 638, 640, 670, 716, 751, 770], "growth": 19, "previous": 751}, "kanyewest": {"current": 403, "20values": [387, 388, 388, 390, 390, 389, 392, 395, 396, 396, 97, 398, 398, 400, 401, 402, 402, 398, 400, 403], "growth": 3, "previous": 400}};
+
+    var memecols = [];
+    for (var key in memesjson) {
+      memecol = [key];
+      var valsarr = memesjson[key]["20values"];
+      for (num = 0; num < valsarr.length; num++) {
+        memecol.push(valsarr[num]);
+      }
+      memecols.push(memecol);
+    }
+    var chart = c3.generate({
+      'bindto': '#yours',
+      'data': {
+        'columns': memecols
+      }
+    });
+    </script>
 </div>
-
-
-
-
+</div>
+</div>
 </body>
+</div>
 </center>
 </html>
