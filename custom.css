@@ -5,6 +5,10 @@ body {
     color: #f8f1e9;
 }
 
+.background {
+  background-image: url("worldmapsolid.png");
+}
+
 .faq {
   margin: 20px;
 }
