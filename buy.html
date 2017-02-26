@@ -24,6 +24,18 @@
   <link rel="stylesheet" href="buy_sell.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 
+  <script>
+  $('.btn').click(function( event ){ // <---- "event" parameter here
+
+    event.preventDefault();
+    var categories = $(this).attr('rel');
+    buyHashtag();
+
+
+});
+
+  </script>
+
   <!-- <script src="user_market.js"></script> -->
   
 </head>
