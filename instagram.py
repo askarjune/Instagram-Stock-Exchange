@@ -30,6 +30,7 @@ def testInstagramData(usernames, dic):
 	    		dic[u]["previous"] = 0
 	    		dic[u]["current"] = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][:-1])
 	    		dic[u]["value"] = 0
+	    		dic[u]["20values"] = []
 	    	# else, update the current dictionary value
 	    	else:
 	    		# replace "previous" with the current value
@@ -39,7 +40,17 @@ def testInstagramData(usernames, dic):
 	    		dic[u]["current"] = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][:-1])
 	    		
 	    		# calculate value, which is current - previous
-	    		dic[u]["value"] = int(dic[u]["current"]) - int(dic[u]["previous"])
+	    		val = int(dic[u]["current"]) - int(dic[u]["previous"])
+	    		if val >= 0:
+	    			dic[u]["value"] = val
+	    		else:
+	    			dic[u]["value"] = 0
+
+	    		if(len(dic[u]["20values"]) < 20):
+	    			dic[u]["20values"].append(dic[u]["value"])
+	    		else:
+	    			dic[u]["20values"].pop(0)
+	    			dic[u]["20values"].append(dic[u]["value"])
 	
 	return dic
 
@@ -54,4 +65,4 @@ while True:
 	with open("yeehaw_memes.json", 'w') as f:
 		json.dump(dic,f)
 	print dic
-	time.sleep(60)
+	time.sleep(7)
