@@ -31,7 +31,11 @@
     <li><a href="buy.html">Buy</a></li>
     <li><a href="mystocks.html">My Stocks</a></li>
   </ul>
-  <p class="navbar-text">My Coins: #100</p>
+  <p class="navbar-text">My Coins: <span id="coins1">#100</span></p>
+  <script src="user_market.js">
+  var txt = document.getElementById("coins1");
+  txt.innerHTML = getCoins(100);
+  </script>
 </nav>
 
 <p style="text-align: center;">
