@@ -8,10 +8,17 @@ body {
   float: left;
 }
 
+
 .container-fluid{
-  margin-left: 100px;
+  width: 45%;
+
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
    background-color: #000508;
+}
+
+#buy{
+  text-align: right;
+
 }

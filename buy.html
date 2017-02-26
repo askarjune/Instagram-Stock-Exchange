@@ -18,6 +18,7 @@
   <!-- customization, stylesheet things -->
   <link rel="stylesheet" href="buy_sell.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
 </head>
 <body>
 
@@ -36,16 +37,16 @@
 
 
 <div class="container-fluid" id="left">
-  <h1>Buy Hashtags</h1>
-  <p>Here are available hashtags to buy now.</p>
+  <h1>Insta Market</h1>
+  <p>Here are available Instas, click View to see buying options.</p>
 
   <!DOCTYPE html>
   <html>
   <body>
 
-  <table class="table table-striped">
+  <table class="table table-striped" id="table">
    <thead>
-     <tr>
+     <tr class='clickable-row'>
        <th></th>
        <th>Name</th>
        <th>Market Value</th>
@@ -53,65 +54,75 @@
      </tr>
    </thead>
    <tbody>
-     <tr>
+     <tr class='clickable-row'>
        <td>1.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>2.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>3.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>4.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>5.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>6.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>7.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>8.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>9.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
-     <tr>
+     <tr class='clickable-row'>
        <td>10.</td>
        <td>PEPE</td>
        <td>$5000</td>
        <td>5%</td>
+       <td><button type="button" class="btn btn-default"> View </button></td>
      </tr>
    </tbody>
  </table>
@@ -119,8 +130,13 @@
 
 <div class="container-fluid" id = "right">
   <h1>GRAPH GOES HERE</h1>
-  <p>Data</p>
-  <button type="button" class="btn btn-default"> Buy </button>
+  <img src=""></img>
+  <div id="buy">
+    <p>Selected Insta: <span>...</span></p>
+    <p>Value: <span>...</span></p>
+    <p>Growth: <span>...</span></p>
+    <button type="button" class="btn btn-default"> Buy </button>
+  </div>
 
 </div>
 
