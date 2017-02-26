@@ -103,8 +103,15 @@ function buyHashtag(){
 		})
 		getCoin(userCoin);
 	}
-	
-	function getCoins(userCoin){
+
+ 
+}
+
+function getUserQuantities() {
+	return userQuantity;
+}
+
+function getCoins(userCoin){
 	  var a = document.getElementById("coins1");
       a.innerHTML = userCoin;
 	  var a = document.getElementById("coins2");
@@ -113,7 +120,3 @@ function buyHashtag(){
       a.innerHTML = userCoin;
 	  return userCoin;
 	}
- 
-}
-
-
