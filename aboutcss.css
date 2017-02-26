@@ -1,0 +1,10 @@
+body {
+    margin: 30px;
+    background-color: #040e14;
+    font-family: 'Varela Round', sans-serif;
+    color: #f8f1e9;
+}
+
+.background {
+  background-image: url("worldmapsolid.png");
+}
