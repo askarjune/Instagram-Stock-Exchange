@@ -2,6 +2,7 @@ import requests
 import json
 import time
 import re
+from random import *
 
 # retrieves number of followers for given users and stores information in a dict
 def testInstagramData(usernames, dic):
@@ -28,7 +29,14 @@ def testInstagramData(usernames, dic):
 	    	if u not in dic:
 	    		dic[u] = {}
 	    		dic[u]["previous"] = 0
-	    		dic[u]["current"] = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][-5:-1])
+
+	    		follower = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][-4:-1])
+
+	    		if follower.isdigit():
+	    			dic[u]["current"] = int(follower)
+	    		else:
+	    			dic[u]["current"] = randint(100, 999)
+
 	    		dic[u]["20values"] = []
 	    		dic[u]["growth"] = 0
 	    	# else, update the current dictionary value
@@ -36,13 +44,13 @@ def testInstagramData(usernames, dic):
 	    		# replace "previous" with the current value
 	    		dic[u]["previous"] = dic[u]["current"]
 
-	    		follower = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][-5:-1])
+	    		follower = re.sub("[^0-9]", "", parsed[0].split('\"count\": ')[1][-4:-1])
 
 	    		# replace "current" with the new value
 	    		if follower.isdigit():
-	    			dic[u]["current"] = follower
+	    			dic[u]["current"] = int(follower)
 
-	    		dic[u]["growth"] = (int(dic[u]["current"]) - int(dic[u]["previous"]))
+	    		dic[u]["growth"] = (dic[u]["current"] - dic[u]["previous"])
 	    		
 	    		if(len(dic[u]["20values"]) < 20):
 	    			dic[u]["20values"].append(dic[u]["current"])
